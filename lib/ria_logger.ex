@@ -12,7 +12,8 @@ defmodule Ria.Logger do
       %{x: 1, y: 2}
   """
   def inspect(any, %{module: module, function: function, line: line}) do
-    "#{DateTime.utc_now |> DateTime.to_string |> String.split(".") |> List.first} - #{module |> Atom.to_string |> String.split(".") |> List.last}:#{function |> Tuple.to_list |> List.first}:#{line} - #{Kernel.inspect(any, pretty: true, width: 48)}"    |> IO.puts
+    "#{DateTime.utc_now |> DateTime.to_string |> String.split(".") |> List.first} - #{module |> Atom.to_string |> String.split(".") |> List.last}:#{function |> Tuple.to_list |> List.first}:#{line} - #{Kernel.inspect(any, pretty: true, width: 48)}"
+    |> IO.puts
     any
   end
 
