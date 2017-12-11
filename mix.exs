@@ -13,10 +13,16 @@ defmodule Ria.Logger.Mixfile do
   end
 
   def application do
-    [extra_applications: []]
+    [extra_applications: [],
+      applications: [
+        :ria_request
+      ]
+    ]
   end
 
   defp deps do
-    []
+    [
+      {:ria_request, git: "https://github.com/ria-com/elixir-request.git"}
+    ]
   end
 end
