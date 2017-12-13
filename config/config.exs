@@ -9,7 +9,7 @@ config :ria_logger,
   default: :elasticsearch,
   types: %{
     elasticsearch: %{
-      url: "http://elasticsearch.ria.com:80"
+      url: "http://127.0.0.1:9200"
     }
   }
 #import_config "#{Mix.env}.exs"
