@@ -64,7 +64,8 @@ defmodule Ria.Logger do
         },
         "upsert": %{
           logs: [Ria.Logger.format(message, %{module: module, function: function, line: line})],
-          date: DateTime.utc_now
+          date: DateTime.utc_now,
+          server: :inet.getif |> elem(1) |> List.first |> elem(0)  |> Tuple.to_list |> Enum.join(".")
         }
       })
     )
